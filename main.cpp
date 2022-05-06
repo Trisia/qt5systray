@@ -1,8 +1,6 @@
 #include <QApplication>
 #include <QMenu>
-#include <QProcess>
 #include <QSystemTrayIcon>
-#include <QtGlobal>
 #include <QDesktopServices>
 #include <QUrl>
 
