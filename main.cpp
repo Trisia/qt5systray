@@ -6,11 +6,17 @@
 #include <QDesktopServices>
 #include <QUrl>
 
+QSystemTrayIcon *trayIcon;
 
 // 打开点击事件处理器
 void handleOpen(){
     qDebug(">> Open button clicked!");
     QDesktopServices::openUrl(QUrl("http://www.baidu.com"));
+}
+
+void handleQuit(){
+    trayIcon->hide();
+    QCoreApplication::quit();
 }
 
 int main(int argc, char *argv[])
@@ -25,7 +31,7 @@ int main(int argc, char *argv[])
     menu.addAction(&openAct);
     menu.addAction(&quitAct);
     // 菜单绑定事件回调
-    QObject::connect(&quitAct, &QAction::triggered, qApp, &QCoreApplication::quit);
+    QObject::connect(&quitAct, &QAction::triggered, qApp, &handleQuit);
     QObject::connect(&openAct, &QAction::triggered, qApp, &handleOpen);
 
     // 加载图标
@@ -34,7 +40,7 @@ int main(int argc, char *argv[])
     QIcon qIcon(oPixmap);
 
     // 创建并配置状态栏icon
-    QSystemTrayIcon *trayIcon = new QSystemTrayIcon(qIcon);
+    trayIcon = new QSystemTrayIcon(qIcon);
     trayIcon->setContextMenu(&menu);
     trayIcon->setToolTip("Some thing");
     trayIcon->setVisible(true);
