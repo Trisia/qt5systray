@@ -115,5 +115,7 @@ int main(int argc, char *argv[])
 ## 参考文献
 
 [1]. [github . QtExamples .  XMuli . https://github.com/xmuli/QtExamples](https://github.com/xmuli/QtExamples)
+
 [2]. [stackoverflow . How to write QT system tray app without a window class, and integrate it with another process? . Kevin Krammer . 2017.01  . https://stackoverflow.com/questions/41780618/how-to-write-qt-system-tray-app-without-a-window-class-and-integrate-it-with-an](https://stackoverflow.com/questions/41780618/how-to-write-qt-system-tray-app-without-a-window-class-and-integrate-it-with-an)
+
 [3]. [C语言中文网 . Qt教程 . http://c.biancheng.net/qt/](http://c.biancheng.net/qt/)
